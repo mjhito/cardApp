@@ -1,0 +1,24 @@
+# Snyk (https://snyk.io) policy file
+custom_rules:
+  - id: 'Deprecated Method Call - MyOwnSanitizer'
+    description: 'As of 2023 we do not want this used internally. The framework has this built in, please use that. See ..... for more information'
+    severity: 'high'
+    cwe: []
+    fix_analysis: 'Please use known framework methodologies to address this issue. The previously used internal framework is no longer maintained.'
+    rule_code: "CallExpression< \"myOwnSanitizer\">\n# This example finds all calls to library functions named 'login' (among others, the Java class\n# sun.net.ftp.impl.FtpClient has such a method to log into an FTP server). This can be useful to locate code that\n# handles user credentials.\n# Note that calls to functions defined in your own code usually cannot be looked up using this template, because\n# the analysis engine inlines such calls if possible."
+    languages:
+      - 'apex'
+      - 'c'
+      - 'cpp'
+      - 'csharp'
+      - 'go'
+      - 'java'
+      - 'javascript'
+      - 'kotlin'
+      - 'php'
+      - 'python'
+      - 'ruby'
+      - 'scala'
+      - 'swift'
+      - 'typescript'
+      - 'vb'
