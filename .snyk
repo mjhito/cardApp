@@ -1,0 +1,40 @@
+custom_rules:
+  - id: Deprecated Method Call - MyOwnSanatizer
+    description: >-
+      As of 2023 we do not want this used internally. The framework ha this
+      built in, please use that. See  for more information
+    severity: high
+    cwe: []
+    fix_analysis: ''
+    rule_code: >-
+      CallExpression<"myOwnSanitizer">
+
+      # This example finds all calls to library functions named 'login' (among
+      others, the Java class
+
+      # sun.net.ftp.impl.FtpClient has such a method to log into an FTP server).
+      This can be useful to locate code that
+
+      # handles user credentials.
+
+      # Note that calls to functions defined in your own code usually cannot be
+      looked up using this template, because
+
+      # the analysis engine inlines such calls if possible.
+    languages:
+      - apex
+      - c
+      - cpp
+      - csharp
+      - go
+      - html
+      - java
+      - javascript
+      - kotlin
+      - php
+      - python
+      - ruby
+      - scala
+      - swift
+      - typescript
+      - vb
